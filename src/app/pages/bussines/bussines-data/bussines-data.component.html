@@ -1,0 +1,46 @@
+
+<div class="row" *ngIf="!isnull && flag">
+    <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
+    <nb-card size="medium">
+      <div class="picture" style.background-image="url('assets/images/kitten-{{currentTheme}}.png')"></div>
+
+      <div class="details">
+        <div class="h4">{{this.bussinesr.name}}</div>
+        <div class="description">
+          Type: {{this.bussinesr.type}} <br>
+
+        </div>
+      </div>
+
+      <nb-card-footer>
+
+        <a href="https://itunes.apple.com/us/app/kitten-tricks/id1246143230" target="_blank">
+          <i class="link-icon ion-social-facebook"></i>
+        </a>
+        <a href="https://itunes.apple.com/us/app/kitten-tricks/id1246143230" target="_blank">
+          <i class="link-icon ion-social-instagram"></i>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.akveo.kittenTricks" target="_blank">
+          <i class="link-icon ion-social-twitter"></i>
+        </a>
+
+
+      </nb-card-footer>
+    </nb-card>
+  </div>
+  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+    <nb-card size="medium">
+
+
+      <div class="details">
+        <div class="h4">
+          Contracted service </div>
+        <div class="description">
+          Standard
+        </div>
+      </div>
+    </nb-card>
+  </div>
+
+
+</div>

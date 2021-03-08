@@ -1,0 +1,10 @@
+<nb-card>
+    <nb-card-header>{{bussines_type}} info</nb-card-header>
+    <nb-card-body>
+        <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode"></AutocompleteComponent>
+        <br>
+        {{formattedAddress}}
+        <br>
+        <input type="text" [(ngModel)]="name" style="max-width:50%; margin-left:2em;" nbInput fullWidth shape="semi-round" placeholder="Insert Name">
+    </nb-card-body>
+</nb-card>

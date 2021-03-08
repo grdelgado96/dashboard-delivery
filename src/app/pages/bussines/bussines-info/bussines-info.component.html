@@ -1,0 +1,13 @@
+<nb-card>
+    <nb-card-header>Bussines Info</nb-card-header>
+    <nb-card-body>
+      <div class="form-group">
+        <label for="typeselect" class="label">Type</label>
+        <nb-select  selected="type_food" id="typeselect" [(ngModel)]="type">
+          <nb-option value="type_shop" >Shop</nb-option>
+          <nb-option value="type_food">Food</nb-option>
+        </nb-select>
+      </div>
+      <input type="text" [(ngModel)]="name" style="max-width:50%; margin-left:2em;" nbInput fullWidth shape="semi-round" placeholder="Insert Name">
+    </nb-card-body>
+  </nb-card>

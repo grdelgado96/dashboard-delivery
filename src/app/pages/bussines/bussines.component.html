@@ -1,0 +1,27 @@
+<ngx-bussines-data [isnull]="isnull"> </ngx-bussines-data>
+
+
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12" *ngIf=isnull>
+  <nb-card-body>
+    <nb-stepper orientation="horizontal">
+      <nb-step [label]="labelOne">
+        <ng-template #labelOne>First step</ng-template>
+        <ngx-bussines-info [action]="action"></ngx-bussines-info>
+        <button nbButton disabled nbStepperNext>prev</button>
+        <button nbButton nbStepperNext (click)="change()">next</button>
+      </nb-step>
+      <nb-step [label]="labelTwo">
+        <ng-template #labelTwo>Second step</ng-template>
+        <ngx-food-shop [type]="type"></ngx-food-shop>
+        <button nbButton nbStepperPrevious (click)="change()">prev</button>
+        <button nbButton nbStepperNext>next</button>
+      </nb-step>
+      <nb-step [label]="labelThird">
+        <ng-template #labelThird>Third step</ng-template>
+        <h3>Step content #3</h3>
+        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton disabled nbStepperNext>next</button>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>
