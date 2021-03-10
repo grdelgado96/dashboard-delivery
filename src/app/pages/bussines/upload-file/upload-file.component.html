@@ -1,0 +1,18 @@
+<label class="col-sm-3 label">Insert Image</label>
+<br>
+<label for="file" class="subir">
+    <i class="fas fa-cloud-upload-alt"></i> Upload Image
+</label>
+<input #userPhoto type="file" (change)="fileChange($event)" id="file" style='display: none;'/>
+<br>
+<br>
+<div class="picture" *ngIf=flag>
+    <img id="img1"  height="200" [src]="url">
+    <nb-button (click)=clearSelectedPhoto() >
+        <nb-icon icon="close-outline" pack="eva"></nb-icon>
+    </nb-button>
+    
+</div>
+
+<br>
+<br>

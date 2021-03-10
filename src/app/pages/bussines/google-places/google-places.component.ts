@@ -1,7 +1,7 @@
 
 
 import { Component, ViewChild, EventEmitter, Output, OnInit, AfterViewInit, Input } from '@angular/core';
-import {address} from '../../../models/address'
+
 
 @Component({
     selector: 'AutocompleteComponent',
@@ -12,7 +12,7 @@ export class AutocompleteComponent implements OnInit, AfterViewInit {
     @Input() adressType: string;
     @Output() setAddress: EventEmitter<any> = new EventEmitter();
     @ViewChild('addresstext') addresstext: any;
-    address:address;
+    
 
     autocompleteInput: string;
     queryWait: boolean;

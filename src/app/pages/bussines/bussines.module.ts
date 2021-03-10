@@ -22,7 +22,8 @@ import { BussinesInfoComponent } from './bussines-info/bussines-info.component';
 import { FoodShopComponent } from './food-shop/food-shop.component';
 import { BussinesDataComponent } from './bussines-data/bussines-data.component';
 import { AutocompleteComponent } from './google-places/google-places.component';
-
+import {ImageUploadModule} from 'angular2-image-upload';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 @NgModule({
   imports: [
     FormsModule,
@@ -41,13 +42,15 @@ import { AutocompleteComponent } from './google-places/google-places.component';
     NgxEchartsModule,
     NbCheckboxModule,
     NbInputModule,
+    ImageUploadModule.forRoot(),
   ],
   declarations: [
     BussinesComponent,
     BussinesInfoComponent,
     FoodShopComponent,
     BussinesDataComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    UploadFileComponent
 
   ],
 })

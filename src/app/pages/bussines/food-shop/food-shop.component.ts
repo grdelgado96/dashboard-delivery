@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, NgZone, OnInit, ViewChild } from '@angular/core';
 import {AutocompleteComponent} from '../google-places/google-places.component';
+import {ImageUploadComponent} from 'angular2-image-upload';
 @Component({
   selector: 'ngx-food-shop',
   templateUrl: './food-shop.component.html',
@@ -112,5 +113,7 @@ export class FoodShopComponent implements OnInit, AfterViewInit{
       phone = this.getAddrComponent(place, COMPONENT_TEMPLATE);
     return phone;
   }
+
+  
 
 }
