@@ -18,6 +18,7 @@ export class BussinesDataComponent implements OnInit {
   public bussinesr: Bussines;
   currentbussines:bussines;
   flag:boolean=false;
+ img:string;
 
   constructor(private themeService: NbThemeService,private bussinesService: BussinesService) { 
     this.themeSubscription = this.themeService.getJsTheme().subscribe(theme => {
@@ -30,6 +31,8 @@ export class BussinesDataComponent implements OnInit {
   }
   getBussines(){
     this.currentbussines=JSON.parse(localStorage.getItem('bussines'));
+   this.img= JSON.parse(localStorage.getItem('image'));
+  console.log(this.img);
     if(this.currentbussines!= null){
       this.bussinesService.aBussinesResource(this.currentbussines.id).subscribe((resp:any)=>{
         this.bussinesr=resp;

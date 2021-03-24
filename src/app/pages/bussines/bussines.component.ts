@@ -12,6 +12,8 @@ export class BussinesComponent implements OnInit {
   buss: bussines = JSON.parse(localStorage.getItem('bussines'));
   isnull: boolean;
   action: boolean = false;
+  actionrest:boolean=false;
+  flagImage:boolean=false;
 
   constructor(private deliveryService: DeliveryService, private bussinesService: BussinesService,) { }
 
@@ -22,6 +24,14 @@ export class BussinesComponent implements OnInit {
   change() {
     this.action = !this.action;
   }
-
+  changerest() {
+    this.actionrest = !this.actionrest;
+  }
+  changerest2() {
+    this.actionrest = !this.actionrest;
+    this.flagImage = !this.flagImage;
+  }
+ 
+ 
 
 }

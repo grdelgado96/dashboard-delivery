@@ -14,10 +14,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    title: 'Restaurant',
+    icon: 'square-outline',
+    link: '/pages/restaurant-dashboard',
+    home: true,
   },
+  // {
+  //   title: 'IoT Dashboard',
+  //   icon: 'home-outline',
+  //   link: '/pages/iot-dashboard',
+  // },
   {
     title: 'FEATURES',
     group: true,

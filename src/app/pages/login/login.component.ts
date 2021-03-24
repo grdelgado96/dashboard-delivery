@@ -59,6 +59,7 @@ export class NgxLoginComponent extends NbLoginComponent {
           if(this.currentUserData != null){
             localStorage.setItem('user_id', this.currentUserData.id);
             localStorage.setItem('bussines', JSON.stringify(this.currentUserData.bussines));
+            localStorage.setItem('image', JSON.stringify(this.currentUserData.image));
           }
 
         }, error => {

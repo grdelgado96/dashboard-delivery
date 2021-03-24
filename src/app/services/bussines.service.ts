@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Form } from '@angular/forms';
 import { environment } from '../../../src/environments/environment';
-import {ParamsBussines}from '../models/Bussines';
+import { ParamsBussines } from '../models/Bussines';
 
 @Injectable({
   providedIn: 'root'
@@ -9,28 +10,34 @@ import {ParamsBussines}from '../models/Bussines';
 export class BussinesService {
   protected apiUrl: String;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.apiUrl = environment.apiUrl;
   }
-  public aBussinesResource(id:string,options: any = {}){
+  public aBussinesResource(id: string, options: any = {}) {
     options.headers = new HttpHeaders();
-    return this.http.get(this.apiUrl + "/api/bussines/"+id);
+    return this.http.get(this.apiUrl + "/api/bussines/" + id);
   }
-  public createBussines(params:ParamsBussines,options: any = {}){
+  public createBussines(params: ParamsBussines, options: any = {}) {
     options.headers = new HttpHeaders().set("Content-Type", 'application/json');
     var body = {
       "type": params.type,
       "name": params.name,
     };
-    return this.http.post(this.apiUrl + "/api/bussines",body,options);
+    return this.http.post(this.apiUrl + "/api/bussines", body, options);
   }
-  public updateBussines(id:string, name:string,options: any = {}){
+  public updateBussines(id: string, name: string, options: any = {}) {
     options.headers = new HttpHeaders().set("Content-Type", 'application/json');
     var body = {
       "name": name,
     };
-
-    return this.http.put(this.apiUrl + "/api/bussines/"+id,body,options);
+    return this.http.put(this.apiUrl + "/api/bussines/" + id, body, options);
+  }
+  public addImage(image: File) {
+    const formData: FormData = new FormData();
+    formData.append('file', image, image.name);
+    return this.http.post(this.apiUrl + "/api/me/image", formData, {
+      responseType: 'text'
+    });
   }
 
 

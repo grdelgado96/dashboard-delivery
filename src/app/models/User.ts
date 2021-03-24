@@ -19,6 +19,7 @@ export interface CurrentUserData{
     nif:string;
     surnames:string;
     phone:string;
+    image:string
 }
 export interface bussines{
     id:string;

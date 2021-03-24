@@ -6,7 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { BussinesComponent } from './bussines/bussines.component';
-
+import { RestaurantComponent } from './restaurant/restaurant.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -18,6 +18,10 @@ const routes: Routes = [{
     {
       path: 'bussines-dashboard',
       component: BussinesComponent,
+    },
+    {
+      path: 'restaurant-dashboard',
+      component: RestaurantComponent,
     },
     {
       path: 'iot-dashboard',

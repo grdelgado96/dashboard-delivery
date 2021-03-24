@@ -12,14 +12,14 @@
       </nb-step>
       <nb-step [label]="labelTwo">
         <ng-template #labelTwo>Second step</ng-template>
-        <ngx-food-shop [type]="type"></ngx-food-shop>
+        <ngx-food-shop [actionrest]="actionrest" [flagImage]="flagImage"></ngx-food-shop>
         <button nbButton nbStepperPrevious (click)="change()">prev</button>
-        <button nbButton nbStepperNext>next</button>
+        <button nbButton nbStepperNext (click)="changerest()">next</button>
       </nb-step>
       <nb-step [label]="labelThird">
         <ng-template #labelThird>Third step</ng-template>
         <h3>Step content #3</h3>
-        <button nbButton nbStepperPrevious>prev</button>
+        <button nbButton nbStepperPrevious (click)="changerest2()">prev</button>
         <button nbButton disabled nbStepperNext>next</button>
       </nb-step>
     </nb-stepper>

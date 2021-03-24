@@ -8,6 +8,6 @@
         <input type="text" [(ngModel)]="name" style="max-width:50%; margin-left:2em;" nbInput fullWidth shape="semi-round" placeholder="Insert Name">
         <br>
         <br>
-        <ngx-upload-file></ngx-upload-file>
+        <ngx-upload-file [actionrest]="actionrest" [idSetImage]="idSetImage" [flagImage]="flagImage"></ngx-upload-file>
     </nb-card-body>
 </nb-card>
