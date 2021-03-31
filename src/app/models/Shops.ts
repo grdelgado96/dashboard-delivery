@@ -10,6 +10,7 @@ export interface ShopsParams{
     name:string;
     lat:string;
     lng:string;
+    address:string;
 }
 export interface Shops{
     stockProd: [string],
@@ -19,4 +20,5 @@ export interface Shops{
     lng:string;
     image: string;
     Images:[string];
+    address:string;
 }

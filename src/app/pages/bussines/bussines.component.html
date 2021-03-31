@@ -1,7 +1,7 @@
-<ngx-bussines-data [isnull]="isnull"> </ngx-bussines-data>
+<ngx-bussines-data *ngIf="!isnull" > </ngx-bussines-data>
 
 
-<nb-card class="col-md-12 col-lg-12 col-xxxl-12" *ngIf=isnull>
+<nb-card class="col-md-12 col-lg-12 col-xxxl-12" *ngIf="isnull">
   <nb-card-body>
     <nb-stepper orientation="horizontal">
       <nb-step [label]="labelOne">
@@ -20,7 +20,7 @@
         <ng-template #labelThird>Third step</ng-template>
         <h3>Step content #3</h3>
         <button nbButton nbStepperPrevious (click)="changerest2()">prev</button>
-        <button nbButton disabled nbStepperNext>next</button>
+        <button nbButton  nbStepperNext (click)="changeflag()">Finish</button>
       </nb-step>
     </nb-stepper>
   </nb-card-body>

@@ -18,6 +18,7 @@ export class RestaurantService {
       "name": params.name,
       "lat": params.lat,
       "lng": params.lng,
+      "address":params.address,
     };
     return this.http.post(this.apiUrl + "/api/restaurants",body,options);
   }
@@ -28,6 +29,7 @@ export class RestaurantService {
       "name": params.name,
       "lat": params.lat,
       "lng": params.lng,
+      "address":params.address,
     };
     return this.http.put(this.apiUrl + "/api/restaurants/"+id,body,options);
   }

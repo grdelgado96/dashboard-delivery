@@ -9,8 +9,9 @@ import { BussinesService } from '../../../../src/app/services/bussines.service'
   templateUrl: './bussines.component.html',
 })
 export class BussinesComponent implements OnInit {
-  buss: bussines = JSON.parse(localStorage.getItem('bussines'));
-  isnull: boolean;
+  //buss: bussines = JSON.parse(localStorage.getItem('bussines'));
+  isnull:boolean = (JSON.parse(localStorage.getItem('bussines')) == null);
+  //isnull: boolean;
   action: boolean = false;
   actionrest:boolean=false;
   flagImage:boolean=false;
@@ -18,7 +19,7 @@ export class BussinesComponent implements OnInit {
   constructor(private deliveryService: DeliveryService, private bussinesService: BussinesService,) { }
 
   ngOnInit(): void {
-    this.isnull = this.buss == null;
+    //this.isnull = this.buss == null;
   }
 
   change() {
@@ -30,6 +31,9 @@ export class BussinesComponent implements OnInit {
   changerest2() {
     this.actionrest = !this.actionrest;
     this.flagImage = !this.flagImage;
+  }
+  changeflag(){
+    this.isnull=false;
   }
  
  

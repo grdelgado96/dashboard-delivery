@@ -18,6 +18,7 @@ export class ShopsService {
       "name": params.name,
       "lat": params.lat,
       "lng": params.lng,
+      "address":params.address,
     };
     return this.http.post(this.apiUrl + "/api/shops",body,options);
   }
@@ -28,6 +29,7 @@ export class ShopsService {
       "name": params.name,
       "lat": params.lat,
       "lng": params.lng,
+      "address":params.address,
     };
     return this.http.put(this.apiUrl + "/api/shops/"+id,body,options);
   }

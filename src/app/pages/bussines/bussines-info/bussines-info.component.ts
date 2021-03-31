@@ -12,7 +12,7 @@ import { BussinesService } from '../../../../../src/app/services/bussines.servic
 export class BussinesInfoComponent implements OnInit {
   @Input() action:boolean;
   bussinesSuc:Bussines;
-  type: string = "type_food";
+  type: string = "";
   name:string = "";
   
   constructor(private bussinesService: BussinesService) { }
@@ -23,13 +23,17 @@ export class BussinesInfoComponent implements OnInit {
 
   createBussines(){
     let params:ParamsBussines=<ParamsBussines>{};
+    localStorage.setItem("type",this.type);
+    console.log(this.type);
+    console.log(localStorage.getItem("type"));
     params.type= this.type;
     params.name= this.name
     if(this.type!=null && this.name!=null){
       this.bussinesService.createBussines(params).subscribe((resp: any) => {
         this.bussinesSuc = resp;
         console.log(resp);
-        localStorage.setItem("type",this.type)
+        
+        localStorage.setItem('bussines', JSON.stringify(this.bussinesSuc));
       }, error => {
         console.log(error);
 
@@ -38,11 +42,13 @@ export class BussinesInfoComponent implements OnInit {
 
   }
   updateBussines(){
+    localStorage.setItem("type",this.type);
     if(this.name!=null && this.bussinesSuc.id!= null){
       this.bussinesService.updateBussines(this.bussinesSuc.id, this.name).subscribe((resp: any) => {
         this.bussinesSuc = resp;
         console.log(resp);
-        localStorage.setItem("type",this.type)
+        
+        localStorage.setItem('bussines', JSON.stringify(this.bussinesSuc));
       }, error => {
         console.log(error);
 

@@ -10,6 +10,7 @@ export interface RestaurantParams{
     name:string;
     lat:string;
     lng:string;
+    address:string;
 }
 export interface Restaurant{
     menus: [string],
@@ -19,4 +20,5 @@ export interface Restaurant{
     lng:string;
     image: string;
     Images:[string];
+    address:string;
 }

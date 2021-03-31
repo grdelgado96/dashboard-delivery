@@ -14,7 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Restaurant',
+    title: 'Restaurant-Shop',
     icon: 'square-outline',
     link: '/pages/restaurant-dashboard',
     home: true,

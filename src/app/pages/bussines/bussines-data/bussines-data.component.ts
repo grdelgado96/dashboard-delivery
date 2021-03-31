@@ -11,7 +11,7 @@ import { UserInfo, Token,CurrentUserData,bussines } from '../../../../../src/app
 })
 export class BussinesDataComponent implements OnInit {
 
-  @Input() isnull:boolean;
+
   currentTheme: string;
   themeSubscription: any;
   
@@ -38,6 +38,7 @@ export class BussinesDataComponent implements OnInit {
         this.bussinesr=resp;
         if(this.bussinesr != null){
           localStorage.setItem('Current_Bussines', JSON.stringify(this.bussinesr));
+          localStorage.setItem("type",this.bussinesr.type);
           this.flag=true;
         }
   

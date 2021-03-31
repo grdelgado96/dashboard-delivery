@@ -25,9 +25,10 @@ export class FoodShopComponent implements OnInit {
 
   lat: number;
   long: number;
+  //addressText:string;
 
   name: string = "";
-  bussines_type: string;
+  bussines_type:string = localStorage.getItem("type");
 
   restaurant: Restaurant;
   shop: Shops;
@@ -39,10 +40,11 @@ export class FoodShopComponent implements OnInit {
   constructor(public zone: NgZone, private restaurantService: RestaurantService, private shopService: ShopsService) { }
 
   ngOnInit(): void {
-    this.getbussinestype();
   }
 
   getbussinestype() {
+    console.log("entro en food-shop");
+    console.log(localStorage.getItem("type"));
     if (localStorage.getItem("type") == "type_food")
       this.bussines_type = "Restaurant";
     else
@@ -54,13 +56,14 @@ export class FoodShopComponent implements OnInit {
     params.name = this.name;
     params.lat = this.lat.toString();
     params.lng = this.long.toString();
-    if (this.name != null && this.lat != null && this.long != null) {
+    params.address = this.formattedAddress;
+    if (this.name != null && this.lat != null && this.long != null && this.address != null) {
       this.restaurantService.createRestaurant(params).subscribe((resp: any) => {
         this.restaurant = resp;
         if (this.restaurant != null) {
           console.log(resp);
           this.idSetImage=this.restaurant.id;
-          console.log(this.idSetImage);
+          //console.log(this.idSetImage);
           this.flagImage = true;
         }
       }, error => {
@@ -75,6 +78,7 @@ export class FoodShopComponent implements OnInit {
     params.name = this.name;
     params.lat = this.lat.toString();
     params.lng = this.long.toString();
+    params.address = this.formattedAddress;
     if (params != null && this.restaurant.id != null) {
       this.restaurantService.updateRestaurant(this.restaurant.id, params).subscribe((resp: any) => {
         this.restaurant = resp;
@@ -96,7 +100,8 @@ export class FoodShopComponent implements OnInit {
     params.name = this.name;
     params.lat = this.lat.toString();
     params.lng = this.long.toString();
-    if (this.name != null && this.lat != null && this.long != null) {
+    params.address = this.formattedAddress;
+    if (this.name != null && this.lat != null && this.long != null && this.address != null) {
       this.shopService.createShop(params).subscribe((resp: any) => {
         this.shop = resp;
         if (this.shop != null) {
@@ -117,6 +122,7 @@ export class FoodShopComponent implements OnInit {
     params.name = this.name;
     params.lat = this.lat.toString();
     params.lng = this.long.toString();
+    params.address = this.formattedAddress;
     if (params != null && this.shop.id != null) {
       this.shopService.updateShop(this.shop.id, params).subscribe((resp: any) => {
         this.shop = resp;
@@ -137,7 +143,7 @@ export class FoodShopComponent implements OnInit {
     //press the botton
     if (this.actionrest == true) {
       //check type bussines
-      if (this.bussines_type == "type_food") {
+      if (localStorage.getItem("type") == "type_food") {
         // create or update restaurant
         if (this.restaurant == null) {
           this.createRestaurant();
